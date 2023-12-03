@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Casts\MoneyCast;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,7 +12,7 @@ class Catalogue extends Model
 
     protected $guarded = ['created_at', 'updated_at'];
 
-//    protected $casts = [
-//        'price' => MoneyCast::class,
-//    ];
+    protected $casts = [
+        'price' => MoneyCast::class,
+    ];
 }

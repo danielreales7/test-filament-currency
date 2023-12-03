@@ -27,7 +27,6 @@ class CatalogueResource extends Resource
                     ->required()
                     ->numeric()
                     ->suffix('€')
-                    ->currencyMask(thousandSeparator: '.',decimalSeparator: ',',precision: 2)
             ]);
     }
 
@@ -35,7 +34,7 @@ class CatalogueResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('price')->label('Precio')->currency('EUR'),
+                Tables\Columns\TextColumn::make('price')->label('Precio')->currency('EUR', true),
             ])
             ->filters([
                 //
